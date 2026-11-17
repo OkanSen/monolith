@@ -1,0 +1,128 @@
+/* ============================================================
+   MONOLITH SKIN: MINIMALIST TECHBRO (FROSTED LIQUID GLASS)
+   ============================================================ */
+
+:root {
+  /* 1. Translucent Liquid Surfaces */
+  --stone-base: rgba(255, 255, 255, 0.38);
+  --stone-plate: rgba(255, 255, 255, 0.52);
+  --stone-carved: rgba(240, 244, 250, 0.65);
+
+  /* 2. Desktop, Viewports & Modal Overlays (Wallpapers show through) */
+  --bg-desktop: transparent;
+  --bg-header: rgba(255, 255, 255, 0.45);
+  --bg-modal-overlay: rgba(15, 23, 42, 0.28);
+  --bg-subpanel: rgba(255, 255, 255, 0.25);
+  --bg-slot: rgba(255, 255, 255, 0.45);
+
+  /* 3. Sleek Frosted Outlines */
+  --line-eroded: rgba(255, 255, 255, 0.65);
+  --line-weathered: rgba(203, 213, 225, 0.4);
+
+  /* 4. Slate Ink & Accents */
+  --glow-core: #0f172a;
+  --glow-aura: rgba(148, 163, 184, 0.35);
+  --text-ash: #334155;
+  --text-fossil: #64748b;
+  --accent-cyan: #0284c7;
+  --accent-alert: #e11d48;
+
+  /* 5. Geometry & Typography */
+  --panel-radius: 12px;
+  --btn-radius: 8px;
+  --font-mono: 'Space Mono', monospace;
+  --font-display: 'Syne', sans-serif;
+}
+
+/* Semi-transparent frosted glass panels with specular reflections */
+.glass-panel {
+  background: var(--stone-base) !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  border-radius: var(--panel-radius) !important;
+  box-shadow: 
+    0 16px 40px rgba(0, 0, 0, 0.06),
+    inset 0 1px 1px rgba(255, 255, 255, 0.95),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.03) !important;
+  backdrop-filter: blur(24px) saturate(190%) brightness(108%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(190%) brightness(108%) !important;
+}
+
+/* Remove dark noisy basalt scanline overlay for liquid glass transparency */
+.glass-panel::before {
+  display: none !important;
+}
+
+/* Crisp slate typography */
+.relic-glow {
+  color: var(--glow-core) !important;
+  text-shadow: none !important;
+  font-weight: 700 !important;
+}
+
+/* Pill-shaped frosted buttons */
+.monolith-btn {
+  border-radius: var(--btn-radius) !important;
+  border: 1px solid rgba(255, 255, 255, 0.7) !important;
+  color: var(--text-ash) !important;
+  background: rgba(255, 255, 255, 0.5) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+  transition: all 0.18s ease !important;
+}
+
+.monolith-btn:hover {
+  background: rgba(255, 255, 255, 0.85) !important;
+  color: var(--glow-core) !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08) !important;
+  text-shadow: none !important;
+}
+
+.monolith-btn.active {
+  background: #0f172a !important;
+  color: #ffffff !important;
+  border-color: #0f172a !important;
+  text-shadow: none !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.25) !important;
+}
+
+/* Frosted chiseled slots & custom scrollbar */
+.carved-slot {
+  background: var(--bg-slot) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  border-radius: 6px !important;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.4) !important;
+  border-radius: 4px !important;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--text-ash) !important;
+}
+
+
+
+/* Minimalist Techbro Frosted Filter Bar */
+.music-search-wrap {
+  background: rgba(255, 255, 255, 0.35) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+}
+
+.music-search-input {
+  color: var(--glow-core) !important;
+  font-weight: 600 !important;
+}
+
+.music-search-input::placeholder {
+  color: var(--text-fossil) !important;
+  font-weight: 400 !important;
+}

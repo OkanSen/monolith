@@ -1,0 +1,40 @@
+{
+  "name": "No Music Serious Work",
+  "panels": {
+    "music": {
+      "x": 12,
+      "y": 560,
+      "width": 650,
+      "height": 470,
+      "visible": false
+    },
+    "visualizer": {
+      "x": 396,
+      "y": 8,
+      "width": 1048,
+      "height": 468,
+      "visible": false
+    },
+    "monitor": {
+      "x": 1525,
+      "y": 7,
+      "width": 384,
+      "height": 1020,
+      "visible": true
+    },
+    "telemetry": {
+      "x": 1452,
+      "y": 7,
+      "width": 460,
+      "height": 165,
+      "visible": false
+    },
+    "explorer": {
+      "x": 7,
+      "y": 8,
+      "width": 1512,
+      "height": 1020,
+      "visible": true
+    }
+  }
+}

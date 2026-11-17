@@ -1,0 +1,217 @@
+/* ============================================================
+   MONOLITH SKIN: WASTELAND // CYBER-AMBER EVENT HORIZON
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+:root {
+  /* 1. Deep Gravitational Singularity Surfaces */
+  --stone-base: rgba(8, 6, 4, 0.94);
+  --stone-plate: rgba(24, 16, 7, 0.84);
+  --stone-carved: rgba(4, 3, 2, 0.98);
+
+  /* 2. Void Desktop & Radar Backdrops */
+  --bg-desktop: #040302;
+  --bg-header: rgba(12, 8, 4, 0.95);
+  --bg-modal-overlay: rgba(3, 2, 1, 0.90);
+  --bg-subpanel: rgba(255, 170, 0, 0.05);
+  --bg-slot: rgba(14, 9, 3, 0.92);
+
+  /* 3. Solar Weathering & Radiation Lines */
+  --line-eroded: rgba(255, 170, 0, 0.40);
+  --line-weathered: rgba(245, 158, 11, 0.20);
+
+  /* 4. Radioactive Pulsar Amber Core */
+  --glow-core: #ffb703;
+  --glow-aura: rgba(255, 183, 3, 0.65);
+  --text-ash: #fbbf24;
+  --text-fossil: #92400e;
+  --accent-cyan: #fb923c;
+  --accent-alert: #ef4444;
+
+  /* 5. Geometry & Typography */
+  --panel-radius: 0px;
+  --btn-radius: 0px;
+  --font-mono: 'Share Tech Mono', monospace;
+  --font-display: 'Syne', sans-serif;
+}
+
+/* ------------------------------------------------------------
+   CYBERNETIC EMISSIVE ANIMATIONS
+   ------------------------------------------------------------ */
+
+/* Breathing emissive pulse on relic text & glowing badges */
+@keyframes cyberTextPulse {
+  0%, 100% {
+    text-shadow: 
+      0 0 2px #ffb703,
+      0 0 10px rgba(255, 183, 3, 0.45);
+    opacity: 0.92;
+  }
+  50% {
+    text-shadow: 
+      0 0 4px #ffdd00,
+      0 0 16px var(--glow-aura),
+      0 0 32px rgba(255, 170, 0, 0.85);
+    opacity: 1;
+  }
+}
+
+/* Reactor surge on main chassis panels */
+@keyframes panelSurge {
+  0%, 100% {
+    filter: drop-shadow(0 0 2px rgba(255, 170, 0, 0.18));
+  }
+  50% {
+    filter: drop-shadow(0 0 14px rgba(255, 183, 3, 0.48));
+  }
+}
+
+/* ------------------------------------------------------------
+   CORE PANELS & SURFACES
+   ------------------------------------------------------------ */
+
+/* Chamfered chassis panels with live emissive pulse */
+.glass-panel {
+  clip-path: polygon(
+    16px 0, 100% 0, 
+    100% calc(100% - 16px), calc(100% - 16px) 100%, 
+    0 100%, 0 16px
+  ) !important;
+  border: 1px solid var(--line-eroded) !important;
+  animation: panelSurge 5s ease-in-out infinite !important;
+}
+
+/* Phosphor scanline overlay */
+.glass-panel::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 170, 0, 0.025) 0px,
+    rgba(255, 170, 0, 0.025) 1px,
+    transparent 1px,
+    transparent 3px
+  ) !important;
+  z-index: 1 !important;
+  opacity: 0.75 !important;
+}
+
+/* Intense pulsating typography glow */
+.relic-glow {
+  color: var(--glow-core) !important;
+  animation: cyberTextPulse 3.5s ease-in-out infinite !important;
+}
+
+/* Emissive surge on header clock & telemetry tags */
+header span.relic-glow,
+header button span {
+  animation: cyberTextPulse 3.5s ease-in-out infinite !important;
+}
+
+/* ------------------------------------------------------------
+   CHAMFERED BUTTONS & CONTROLS
+   ------------------------------------------------------------ */
+
+.monolith-btn {
+  background: var(--stone-plate) !important;
+  border: 1px solid var(--line-eroded) !important;
+  color: var(--text-ash) !important;
+  clip-path: polygon(8px 0%, 100% 0%, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0% 100%, 0% 8px) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.16em !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.monolith-btn:hover {
+  background: rgba(255, 183, 3, 0.22) !important;
+  border-color: var(--glow-core) !important;
+  color: #ffffff !important;
+  filter: drop-shadow(0 0 12px var(--glow-aura)) !important;
+  text-shadow: 0 0 8px var(--glow-core) !important;
+  transform: translateY(-1px) scale(1.02) !important;
+}
+
+.monolith-btn.active {
+  background: rgba(255, 183, 3, 0.36) !important;
+  border-color: #ffb703 !important;
+  color: #ffffff !important;
+  filter: drop-shadow(0 0 16px var(--glow-aura)) !important;
+  text-shadow: 0 0 10px #ffdd00 !important;
+}
+
+/* Inset slots, progress bars & scrollbars */
+.carved-slot {
+  background: var(--bg-slot) !important;
+  border: 1px solid var(--line-eroded) !important;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.95) !important;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--line-eroded) !important;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--glow-core) !important;
+  box-shadow: 0 0 12px var(--glow-aura) !important;
+}
+
+/* Hover emissive surge for explorer items */
+.explorer-row:hover {
+  background: rgba(255, 183, 3, 0.12) !important;
+  border-left-color: var(--glow-core) !important;
+  text-shadow: 0 0 8px var(--glow-aura) !important;
+}
+
+/* ------------------------------------------------------------
+   AGGRESSIVE SCI-FI CAROUSEL CARDS
+   ------------------------------------------------------------ */
+
+/* Scoped strictly to Cover Flow cards inside the perspective container */
+.monolith-modal-content div[style*="perspective"] > div:not([style*="opacity: 0"]) {
+  width: 320px !important;
+  height: 210px !important;
+  flex: 0 0 320px !important;
+  transform: skewX(-6deg) !important;
+  /* Deep 24px chamfer cuts on diagonally opposing corners */
+  clip-path: polygon(
+    24px 0%, 100% 0%, 
+    100% calc(100% - 24px), 
+    calc(100% - 24px) 100%, 
+    0% 100%, 
+    0% 24px
+  ) !important;
+  border: 1px solid var(--line-eroded) !important;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), filter 0.22s ease !important;
+}
+
+.monolith-modal-content div[style*="perspective"] > div:not([style*="opacity: 0"]):hover {
+  transform: skewX(-6deg) scale(1.12) !important;
+  filter: drop-shadow(0 0 28px var(--glow-aura)) drop-shadow(0 0 8px var(--glow-core)) !important;
+  border-color: var(--glow-core) !important;
+}
+
+
+
+
+
+
+/* Voidwalker Amber Filter Strip */
+.music-search-wrap {
+  background: var(--bg-slot) !important;
+  border-bottom: 1px solid var(--line-eroded) !important;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.9) !important;
+}
+
+.music-search-input {
+  color: var(--glow-core) !important;
+  font-family: var(--font-mono) !important;
+  text-shadow: 0 0 6px rgba(255, 183, 3, 0.45) !important;
+}
+
+.music-search-input::placeholder {
+  color: var(--text-fossil) !important;
+  text-shadow: none !important;
+}

@@ -1,0 +1,47 @@
+{
+  "name": "Music Player Remote Setup",
+  "panels": {
+    "music": {
+      "x": 1450,
+      "y": 7,
+      "width": 462,
+      "height": 461,
+      "visible": true
+    },
+    "visualizer": {
+      "x": 10,
+      "y": 8,
+      "width": 1434,
+      "height": 1018,
+      "visible": true
+    },
+    "monitor": {
+      "x": 396,
+      "y": 484,
+      "width": 1048,
+      "height": 542,
+      "visible": false
+    },
+    "telemetry": {
+      "x": 1053,
+      "y": 93,
+      "width": 460,
+      "height": 468,
+      "visible": false
+    },
+    "explorer": {
+      "x": 1452,
+      "y": 567,
+      "width": 460,
+      "height": 459,
+      "visible": false
+    },
+    "remote": {
+      "x": 1450,
+      "y": 475,
+      "width": 462,
+      "height": 549,
+      "visible": true
+    }
+  }
+}

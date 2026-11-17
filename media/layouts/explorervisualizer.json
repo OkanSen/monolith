@@ -1,0 +1,40 @@
+{
+  "name": "Explorer + Visualizer",
+  "panels": {
+    "music": {
+      "x": 8,
+      "y": 8,
+      "width": 627,
+      "height": 266,
+      "visible": true
+    },
+    "visualizer": {
+      "x": 8,
+      "y": 279,
+      "width": 627,
+      "height": 747,
+      "visible": true
+    },
+    "monitor": {
+      "x": 639,
+      "y": 8,
+      "width": 811,
+      "height": 469,
+      "visible": true
+    },
+    "telemetry": {
+      "x": 1452,
+      "y": 8,
+      "width": 460,
+      "height": 468,
+      "visible": true
+    },
+    "explorer": {
+      "x": 641,
+      "y": 484,
+      "width": 1271,
+      "height": 542,
+      "visible": true
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Cleaner",
+  "panels": {
+    "music": {
+      "x": 7,
+      "y": 10,
+      "width": 380,
+      "height": 1011,
+      "visible": true
+    },
+    "visualizer": {
+      "x": 394,
+      "y": 8,
+      "width": 1054,
+      "height": 1016,
+      "visible": true
+    },
+    "monitor": {
+      "x": 396,
+      "y": 484,
+      "width": 1048,
+      "height": 542,
+      "visible": false
+    },
+    "telemetry": {
+      "x": 1452,
+      "y": 8,
+      "width": 460,
+      "height": 174,
+      "visible": true
+    },
+    "explorer": {
+      "x": 1453,
+      "y": 183,
+      "width": 461,
+      "height": 840,
+      "visible": true
+    }
+  }
+}

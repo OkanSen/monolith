@@ -1,0 +1,226 @@
+/* ============================================================
+   MONOLITH SKIN: HELLDIVER // ORBITAL STRIKE TACTICAL DECK
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700;800&family=Share+Tech+Mono&display=swap');
+
+:root {
+  /* 1. Armored Super-Earth Titanium Chassis */
+  --stone-base: rgba(10, 11, 14, 0.94);
+  --stone-plate: rgba(22, 25, 32, 0.88);
+  --stone-carved: rgba(6, 7, 9, 0.98);
+
+  /* 2. Combat HUD Viewport Backdrops */
+  --bg-desktop: #07080a;
+  --bg-header: rgba(14, 16, 20, 0.96);
+  --bg-modal-overlay: rgba(6, 7, 9, 0.92);
+  --bg-subpanel: rgba(255, 153, 0, 0.04);
+  --bg-slot: rgba(12, 14, 18, 0.95);
+
+  /* 3. Ballistic Carbon Scoring & Armor Seams */
+  --line-eroded: rgba(255, 153, 0, 0.45);
+  --line-weathered: rgba(255, 42, 0, 0.25);
+
+  /* 4. Nuclear Amber / Orbital Red Beacon */
+  --glow-core: #ff9900;
+  --glow-aura: rgba(255, 153, 0, 0.65);
+  --text-ash: #ffb84d;
+  --text-fossil: #804000;
+  --accent-cyan: #ffaa00;
+  --accent-alert: #ff1a1a;
+
+  /* 5. Geometry & Typography */
+  --panel-radius: 0px;
+  --btn-radius: 0px;
+  --font-mono: 'Share Tech Mono', monospace;
+  --font-display: 'Chakra Petch', sans-serif;
+}
+
+/* ------------------------------------------------------------
+   TACTICAL ANIMATIONS
+   ------------------------------------------------------------ */
+
+@keyframes orbitalWarningStrobe {
+  0%, 100% {
+    border-color: rgba(255, 153, 0, 0.45);
+    box-shadow: 0 0 10px rgba(255, 153, 0, 0.15);
+  }
+  50% {
+    border-color: #ff2a00;
+    box-shadow: 0 0 25px rgba(255, 42, 0, 0.45), inset 0 0 15px rgba(255, 42, 0, 0.12);
+  }
+}
+
+/* ------------------------------------------------------------
+   TARGET ACQUISITION L-BRACKET CHASSIS
+   ------------------------------------------------------------ */
+
+/* Apply HUD brackets ONLY to actual workspace panels, NOT dropdowns or modals */
+main .glass-panel {
+  position: absolute !important;
+  border: 1px solid var(--line-eroded) !important;
+  background: var(--stone-base) !important;
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.95),
+    inset 0 1px 0 rgba(255, 153, 0, 0.25) !important;
+  animation: orbitalWarningStrobe 8s ease-in-out infinite !important;
+}
+
+main .glass-panel::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: -1px !important;
+  pointer-events: none !important;
+  background: 
+    linear-gradient(to right, #ff9900 8px, transparent 8px) top left,
+    linear-gradient(to bottom, #ff9900 8px, transparent 8px) top left,
+    linear-gradient(to left, #ff9900 8px, transparent 8px) bottom right,
+    linear-gradient(to top, #ff9900 8px, transparent 8px) bottom right !important;
+  background-size: 16px 16px !important;
+  background-repeat: no-repeat !important;
+  z-index: 5 !important;
+}
+
+/* ------------------------------------------------------------
+   ARMORED BUTTONS
+   ------------------------------------------------------------ */
+
+.monolith-btn {
+  font-family: var(--font-display) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  background: var(--stone-plate) !important;
+  border: 1px solid var(--line-eroded) !important;
+  color: var(--text-ash) !important;
+  position: relative !important;
+  transition: all 0.15s ease !important;
+}
+
+.monolith-btn:hover {
+  background: #ff9900 !important;
+  color: #07080a !important;
+  border-color: #ff9900 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 0 14px rgba(255, 153, 0, 0.7) !important;
+  text-shadow: none !important;
+}
+
+/* Active buttons gain high-contrast hazard pattern */
+.monolith-btn.active {
+  background: repeating-linear-gradient(
+    -45deg,
+    #ff9900,
+    #ff9900 6px,
+    #07080a 6px,
+    #07080a 12px
+  ) !important;
+  color: #ffffff !important;
+  border-color: #ff9900 !important;
+  text-shadow: 0 0 6px #000000, 0 0 10px #000000 !important;
+  box-shadow: 0 0 16px rgba(255, 153, 0, 0.5) !important;
+}
+
+/* Keep header buttons neatly proportioned and unskewed */
+header .monolith-btn {
+  padding: 4px 10px !important;
+  font-size: 10px !important;
+}
+
+/* ------------------------------------------------------------
+   SLOTS, PROGRESS BARS & SCROLLBARS
+   ------------------------------------------------------------ */
+
+.carved-slot {
+  background: #050608 !important;
+  border: 1px solid var(--line-eroded) !important;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.9) !important;
+}
+
+.carved-slot > div {
+  background: repeating-linear-gradient(
+    90deg,
+    #ff9900 0px,
+    #ff9900 12px,
+    #ff2a00 12px,
+    #ff2a00 24px
+  ) !important;
+  box-shadow: 0 0 12px rgba(255, 153, 0, 0.7) !important;
+}
+
+/* Helldiver Orbital Filter Console */
+.music-search-wrap {
+  background: rgba(8, 9, 12, 0.96) !important;
+  border-bottom: 1px solid var(--line-eroded) !important;
+  border-left: 3px solid #ff9900 !important;
+  box-shadow: inset 0 0 12px rgba(255, 153, 0, 0.08) !important;
+}
+
+.music-search-input {
+  color: var(--glow-core) !important;
+  font-family: var(--font-mono) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+}
+
+.music-search-input::placeholder {
+  color: var(--text-fossil) !important;
+  letter-spacing: 0.08em !important;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--line-eroded) !important;
+  border: 1px solid #ff9900 !important;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #ff9900 !important;
+  box-shadow: 0 0 10px #ff9900 !important;
+}
+
+/* ------------------------------------------------------------
+   3D ISOMETRIC CARTRIDGE WALLPAPER CAROUSEL
+   ------------------------------------------------------------ */
+
+.monolith-modal-content div[style*="perspective"] {
+  perspective: 1200px !important;
+  perspective-origin: 50% 50% !important;
+}
+
+.monolith-modal-content div[style*="perspective"] > div:not([style*="opacity: 0"]) {
+  width: 310px !important;
+  height: 220px !important;
+  flex: 0 0 310px !important;
+  transform: perspective(1000px) rotateY(-18deg) rotateX(6deg) scale(0.95) translateZ(0px) !important;
+  border: 2px solid var(--line-eroded) !important;
+  clip-path: polygon(
+    0 0, 
+    calc(100% - 28px) 0, 
+    100% 28px, 
+    100% 100%, 
+    28px 100%, 
+    0 calc(100% - 28px)
+  ) !important;
+  box-shadow: -15px 20px 40px rgba(0, 0, 0, 0.9) !important;
+  filter: drop-shadow(0 0 0px transparent) !important;
+  transform-style: preserve-3d !important;
+  will-change: transform, filter, border-color, box-shadow !important;
+  transition: 
+    transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 0.4s ease-out,
+    border-color 0.35s ease,
+    box-shadow 0.45s ease !important;
+}
+
+.monolith-modal-content div[style*="perspective"] > div:not([style*="opacity: 0"]):hover {
+  transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1.12) translateZ(40px) !important;
+  border-color: #ff9900 !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.98) !important;
+  filter: drop-shadow(0 0 24px rgba(255, 153, 0, 0.85)) !important;
+  z-index: 25 !important;
+  transition: 
+    transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 0.35s ease-in,
+    border-color 0.25s ease,
+    box-shadow 0.45s ease !important;
+}

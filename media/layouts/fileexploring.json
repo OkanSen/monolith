@@ -1,0 +1,40 @@
+{
+  "name": "File Exploring",
+  "panels": {
+    "music": {
+      "x": 12,
+      "y": 560,
+      "width": 650,
+      "height": 470,
+      "visible": true
+    },
+    "visualizer": {
+      "x": 396,
+      "y": 8,
+      "width": 1048,
+      "height": 468,
+      "visible": false
+    },
+    "monitor": {
+      "x": 11,
+      "y": 11,
+      "width": 652,
+      "height": 542,
+      "visible": true
+    },
+    "telemetry": {
+      "x": 1452,
+      "y": 7,
+      "width": 460,
+      "height": 165,
+      "visible": false
+    },
+    "explorer": {
+      "x": 668,
+      "y": 9,
+      "width": 1244,
+      "height": 1020,
+      "visible": true
+    }
+  }
+}

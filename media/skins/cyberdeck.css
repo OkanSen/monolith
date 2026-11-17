@@ -1,0 +1,106 @@
+/* ============================================================
+   MONOLITH SKIN: CYBERDECK (NEON OBSIDIAN // HOT PINK)
+   ============================================================ */
+
+:root {
+  /* 1. Stone Surfaces & Backplates */
+  --stone-base: rgba(14, 11, 24, 0.94);
+  --stone-plate: rgba(28, 18, 44, 0.82);
+  --stone-carved: rgba(8, 4, 16, 0.96);
+
+  /* 2. Desktop, Viewports & Modal Backdrops */
+  --bg-desktop: #0b0714;
+  --bg-header: rgba(14, 11, 24, 0.94);
+  --bg-modal-overlay: rgba(8, 4, 16, 0.86);
+  --bg-subpanel: rgba(255, 0, 127, 0.05);
+  --bg-slot: rgba(6, 3, 12, 0.9);
+
+  /* 3. Eroded Boundaries & Weathered Lines */
+  --line-eroded: rgba(244, 63, 94, 0.45);
+  --line-weathered: rgba(251, 146, 60, 0.22);
+
+  /* 4. Luminescent Core & Accents */
+  --glow-core: #ff007f;
+  --glow-aura: rgba(255, 0, 127, 0.65);
+  --text-ash: #f43f5e;
+  --text-fossil: #9f1239;
+  --accent-cyan: #ff70a6;
+  --accent-alert: #ff0055;
+
+  /* 5. Geometry & Typography */
+  --panel-radius: 0px;
+  --btn-radius: 0px;
+  --font-mono: 'Space Mono', monospace;
+  --font-display: 'Syne', sans-serif;
+}
+
+/* Hard glowing borders & high-contrast cyberpunk blur */
+.glass-panel {
+  border: 1px solid var(--line-eroded) !important;
+  box-shadow: 0 0 25px rgba(255, 0, 127, 0.18), inset 0 0 16px rgba(244, 63, 94, 0.12) !important;
+  backdrop-filter: blur(14px) contrast(135%) !important;
+  -webkit-backdrop-filter: blur(14px) contrast(135%) !important;
+}
+
+/* Searing neon typography bloom */
+.relic-glow {
+  color: var(--glow-core) !important;
+  text-shadow: 0 0 3px #ff007f, 0 0 12px var(--glow-aura), 0 0 28px rgba(244, 63, 94, 0.6) !important;
+}
+
+/* Neon buttons */
+.monolith-btn {
+  border-color: var(--line-eroded) !important;
+  color: var(--text-ash) !important;
+  background: var(--stone-plate) !important;
+}
+
+.monolith-btn:hover {
+  background: rgba(255, 0, 127, 0.16) !important;
+  border-color: var(--glow-core) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 14px var(--glow-aura) !important;
+}
+
+.monolith-btn.active {
+  background: rgba(255, 0, 127, 0.28) !important;
+  border-color: #ff007f !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 16px var(--glow-aura) !important;
+}
+
+/* Chiseled slots & scrollbar thumb */
+.carved-slot {
+  background: var(--bg-slot) !important;
+  border-color: var(--line-eroded) !important;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--line-eroded) !important;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--glow-core) !important;
+  box-shadow: 0 0 8px var(--glow-aura) !important;
+}
+
+
+
+
+/* Cyberdeck Playlist Filter Bar */
+.music-search-wrap {
+  background: rgba(14, 11, 24, 0.95) !important;
+  border-bottom: 1px solid var(--line-eroded) !important;
+  box-shadow: inset 0 0 10px rgba(255, 0, 127, 0.08) !important;
+}
+
+.music-search-input {
+  color: var(--glow-core) !important;
+  font-family: var(--font-mono) !important;
+  text-shadow: 0 0 6px rgba(255, 0, 127, 0.4) !important;
+}
+
+.music-search-input::placeholder {
+  color: var(--text-fossil) !important;
+  text-shadow: none !important;
+}

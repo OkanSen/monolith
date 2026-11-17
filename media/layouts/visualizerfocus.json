@@ -1,0 +1,40 @@
+{
+  "name": "Visualizer Focus",
+  "panels": {
+    "music": {
+      "x": 1535,
+      "y": 6,
+      "width": 380,
+      "height": 1011,
+      "visible": true
+    },
+    "visualizer": {
+      "x": 7,
+      "y": 7,
+      "width": 1525,
+      "height": 1016,
+      "visible": true
+    },
+    "monitor": {
+      "x": 396,
+      "y": 484,
+      "width": 1048,
+      "height": 542,
+      "visible": false
+    },
+    "telemetry": {
+      "x": 1452,
+      "y": 8,
+      "width": 460,
+      "height": 468,
+      "visible": false
+    },
+    "explorer": {
+      "x": 1452,
+      "y": 484,
+      "width": 460,
+      "height": 542,
+      "visible": false
+    }
+  }
+}
